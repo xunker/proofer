@@ -35,15 +35,32 @@ directory for any markdown (*.md) files and attempt to run them.
 
 ### Code
 
+You can load markdown from a file:
+
 ```ruby
   require 'rubygems' # only needed for 1.8.7 and older.
   require 'proofer'
 
-  proofer = Proofer.new('./test.md')
+  proofer = Proofer.from_file('./test.md')
 
-  proofer.passes?
+  proofer.passed?
   # => true
 ```
+
+You can also load it from a string:
+
+```ruby
+  require 'rubygems' # only needed for 1.8.7 and older.
+  require 'proofer'
+
+  proofer = Proofer.from_string('string of markdown')
+
+  proofer.passed?
+  # => true
+  proofer.failed?
+  # => false
+```
+
 
 ## Contributing
 
