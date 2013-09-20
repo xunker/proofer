@@ -19,8 +19,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 ```
 
 ```ruby
-  # this line shouldn't be executed in tests
-  puts 's'
+  raise 'this block should not be executed in tests'
 ```
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
