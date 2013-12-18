@@ -75,7 +75,7 @@ protected
           sub_blocks.each_with_index do |sub_block, index|
             next unless sub_block.last =~ /^\s*\#\s*\=\>\s*.*$/
             expected = sub_block.last.match(/^\s*\#\s*\=\>\s*(.*)$/)[1]
-            bbb = "retval#{index} = (\n" + sub_block[0..-2].join("\n") + "\n)\n"
+            bbb = "retval#{index} = (\n" + sub_block[0..sub_block.size].join("\n") + "\n)\n"
 
             bbb << "expected#{index} = (" + expected + ")\n"
 
